@@ -7,16 +7,16 @@ export function generateStaticParams() {
     return getCategories().map((cat) => ({ slug: cat.slug }));
 }
 
-export function generateMetadata({ params }) {
-    const { slug } = params;
+export async function generateMetadata({ params }) {
+    const { slug } = await params;
     const name = getCategoryName(slug);
     return {
         title: `${name} News`
     };
 }
 
-export default function CategoryPage({ params }) {
-    const { slug } = params;
+export default async function CategoryPage({ params }) {
+    const { slug } = await params;
     const categories = getCategories();
     const isValid = categories.some((c) => c.slug === slug);
 
