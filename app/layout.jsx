@@ -4,9 +4,10 @@ import { Header } from '../components/header';
 
 export const metadata = {
     title: {
-        template: '%s | Netlify',
-        default: 'Netlify Starter'
-    }
+        template: '%s | The Daily Wire',
+        default: 'The Daily Wire - Breaking News & Analysis'
+    },
+    description: 'Your trusted source for breaking news, in-depth analysis, and stories that matter.'
 };
 
 export default function RootLayout({ children }) {
@@ -15,11 +16,11 @@ export default function RootLayout({ children }) {
             <head>
                 <link rel="icon" href="/favicon.svg" sizes="any" />
             </head>
-            <body className="antialiased text-white bg-blue-900">
-                <div className="flex flex-col min-h-screen px-6 bg-noise sm:px-12">
-                    <div className="flex flex-col w-full max-w-5xl mx-auto grow">
+            <body className="antialiased text-white bg-neutral-950">
+                <div className="flex flex-col min-h-screen px-4 sm:px-6 lg:px-8">
+                    <div className="flex flex-col w-full max-w-6xl mx-auto grow">
                         <Header />
-                        <main className="grow">{children}</main>
+                        <main className="py-8 grow">{children}</main>
                         <Footer />
                     </div>
                 </div>
